@@ -130,7 +130,13 @@ Print in the console the data from each car in the carsForSale array
 console.log(carr1);
 console.log(carr2);
 console.log(carr3);
-console.log(kjdsh);
-
-
-
+const sum = function(a,b){
+   let sum2 = a + b ;
+   return sum2;
+}
+let y = sum(1,3);
+let q = sum(3,4);
+console.log(y);
+console.log(q);
+const qArray = [1,23,4]
+console.log(qArray.reverse())
