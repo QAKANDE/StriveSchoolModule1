@@ -46,9 +46,9 @@ Write a function "strivify" which accepts a string S. Add to S "Strive" in front
 */
  const strivify = function(S)
  {
-     let str = `strive leggo`;
-     let StrConcat = str + S;
-     let val3 = str.indexOf([0]) === "strive" ? str = "leggo" : str = StrConcat
+     let str = "Strive leggo";
+    // let StrConcat = str + S;
+     let val3 = str === "strive" ? str = "leggo" : str = StrConcat
      return val3 ;
  } 
  console.log(strivify("strive"))

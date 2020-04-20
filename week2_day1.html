@@ -1,0 +1,224 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Barber Shop</title>
+        <style>
+    h1 {
+        color:white;
+      }
+      
+      #wrapper{
+        clear:both;
+	width:1200px;
+	height:2000px;
+	margin:0 auto;
+	padding:20px 10px;
+	background-color:white;
+	border:3px solid black;
+      }
+      #topnav{
+        resize:both;
+			overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:white;
+      }
+      #info{
+        resize:both;
+			overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:black;
+      }
+      #reservation{
+        resize:both;
+			overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:black;
+      }
+      #submit{
+          align-self: center;
+      }
+      #promotion{
+        resize:both;
+			overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:black;
+      }
+      a{
+          color: white;
+      }
+      #address{
+        resize:both;
+			overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:black;
+      }
+      #priceList{
+        resize:both;
+			overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:black;
+      }
+      #leaveMessage{
+        resize:both;
+			overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:black;
+      }
+      p{
+          color:white;
+      }
+      body{
+          background-color: black;
+      }
+      address{
+          background-color: blanchedalmond;
+      }
+      table{
+          background-color: blanchedalmond;
+      }
+      #foot{
+        overflow:auto
+			border:2px solid;
+            background:black;
+			padding: 20px; 
+			width: 800px;
+			margin:auto;
+			border:6px solid lavender;
+			text-align:center;
+			font-family:"Times New Roman" ,Times,serif;
+			color:black;
+      }
+        </style>
+    </head>
+    <body>
+     <div id="wrapper">
+        <div id="topnav">
+            <a class="nav" href="#info">About</a>
+            <a href="#reservation">Reservation</a>
+            <a href="#promotion">Promotion</a>
+            <a href="#address">Address</a>
+          </div>
+         <div id="info">
+             <h1>Q Barbing salon</h1>
+             <p>This is the best barbing salon in london</p>
+         </div>
+         <div id="reservation">
+            <input id="Name" type="text" placeholder="name"/>
+            <input id="Date" type="date"  required/>
+            <input id="PhoneNo" type="text" placeholder="Phone Number" required/>
+         </div>
+         <div><input id="submit"  type="button" value="Make a reservation" onclick="getReservationData()"/></div>
+         <div id="promotion">
+             <h1>PROMOTION GOING ON</h1>
+             <p>Promotion going on here , cut twice a month get the rest of the month free</p>
+         </div>
+         <div id="address">
+             <h1>Current Address</h1>
+             <address>165,london bridge</address>
+         </div>
+         <div id="priceList">
+             <h1>Price List</h1>
+             <table>
+                 <tr>
+                 <th>Haircut</th>
+                 <th>Haircut+beard</th>
+                 <th>Beard</th>
+                 <th>Shave</th>
+                 </tr>
+                 <tr>
+                     <td>20pounds</td>
+                     <td>10pounds</td>
+                     <td>30pounds</td>
+                     <td>40pounds</td>  
+                 </tr>
+             </table>
+         </div>
+         <div id="leaveMessage">
+             <h1>Leave us a message</h1>
+            <input id="email" type="email" placeholder="Enter email"/>
+         </div>
+         <div>
+            <input id="submitEmail"  type="button" value="Submit email" onclick="getEmailData()"/> 
+         </div>
+         <div id="foot">
+         <footer>
+             <p>Qbarshop</p>
+             <p>123,london bridge</p>
+             <p>76879809-0</p>
+            <p>Contact information: <a href="mailto:q@barbershop.com">
+            Q@barbershop.com</a>.</p>
+          </footer>
+          </div>
+     </div>
+          <script>
+              function getEmailData()
+              {
+                  let emailMessage = document.querySelector('#email').value
+                  alert(name + ' ' + emailMessage);
+                  console.log('email is:' , emailMessage);
+                  document.querySelector('#email').value = '';
+              }
+              function getReservationData()
+              {
+                 let ReserveData = {};
+                 let reserveName = document.querySelector('#Name').value;
+                 let reserveDate = document.querySelector('#Date').value;
+                 let reserveNumber = document.querySelector('#PhoneNo').value;
+                 ReserveData.append('name',reserveName)
+                 ReserveData.append('name',reserveDate)
+                 ReserveData.append('name',reserveNumber)
+                 console.log(ReserveData);
+              }
+          </script>
+    </body>
+</html>
