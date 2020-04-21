@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
+        <title>Strive Event Practice</title>
+        <style>
+            .myHeading {
+              color: red;
+            }
+          </style>
+    </head>
+    <body>
+        <div id="headerDivWrap">
+          <div>
+            <h1 class="fTitle">This is the title of the page</h1>
+          </div>
+            <div class = "sTitleDiv">
+            <h2>This is the subtitle of the page</h2>
+            </div>
+          </div>
+          <input type="button" value="changeTitlenow" onclick="changeTitle()">
+            <hr />
+            <div id="divList">
+            <ul class="firstList">
+              <li>1st</li>
+              <li>2nd</li>
+              <li>3rd</li>
+            </ul>
+      ​     <div></div>
+            <ul id="secondList">
+              <li>1st</li>
+              <li>2nd</li>
+              <li>3rd</li>
+            </ul>
+            <input type="button" value="add item" onclick="addList()")/>
+            </div>
+      ​
+            <a  href="strive.school" onclick="changeLink()">This link goes to Strive School</a>
+            ​<div class="e">
+            <div id="textExercise">
+              <p>This text is just for the exercise</p>
+            </div>
+          <div id="anotherTextExercise">
+            <p>And this text is just for the exercise too!</p>
+          </div>
+          <input type="button" value="chnage p" onclick="changeParagraph">
+          </div>
+          <input type="button" value="p change" onclick="changePContent()"/>
+          
+          <script>
+              function changeTitle()
+              {
+                let currentTitle=document.querySelector(".fTitle");
+                currentTitle.innerHTML="second title";
+                currentTitle.style.color = "blue"; 
+                currentTitle.className="myHeading";   
+
+            }
+            function changePContent()
+            {
+                let pWrap = document.querySelector('#textExercise p')  
+                pWrap.innerHTML = "changed"; 
+            }
+            function changeLink()
+            {
+               let linkChange = document.querySelector('a');
+               linkChange.href = "http://www.google.com";
+            }
+            function addList()
+            {
+                let fNewList = document.querySelector('.firstList')
+                fNewList.parentNode.removeChild(fNewList);
+                let newList = document.createElement('LI')
+                let newListText = document.createTextNode('Quadri')
+                newList.appendChild(newListText)
+                let targetList = document.querySelector('#secondList')
+                targetList.appendChild(newList);
+                targetList.style.color="green";    
+            }
+         function headChange(){
+             let h2=document.querySelector('h2')
+             h2.addEventListener("click" ,color)
+             function color(){
+                h2.style.color="yellow";
+             }
+             
+         }
+            window.onload = function()
+            {
+                alert('welcome');
+            }
+            function changeParagraph(){
+                let change = document.querySelectorall('div')
+                let newP = document.createElement('p')
+                newP.innerText = 'sulphur';
+                change.appendChild(newP);
+            }
+          </script>
+    </body>
+</html>

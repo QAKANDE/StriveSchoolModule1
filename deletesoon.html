@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>dwefd</title>
+</head>
+<body>
+    <section>
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </section>
+​
+    <section>
+      <hr />
+​
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+​
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+​
+      <a href="strive.school">This link goes to Strive School</a>
+​
+      <section>
+        <article>This text is just for the exercise</article>
+    </section>
+</section>
+​<section>
+      <article>And this text is just for the exercise too!</article>
+    </section>
+    <script>
+        function changeHeader()
+        {
+            let h1 = document.querySelector('h1')
+            h1.addEventListener("click",color)
+            function color(){
+                h1.style.color = "yellow";
+            }
+        }
+        function addParagraph()
+        {
+            let para = document.querySelectorAll('section')
+            let para1 = document.createElement('p')
+            para1.innerText = 'new text'
+            para.appendChild(para1)
+        }
+    </script>
+  </body>
+</html>

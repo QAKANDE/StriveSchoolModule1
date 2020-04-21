@@ -153,6 +153,7 @@
              <p>This is the best barbing salon in london</p>
          </div>
          <div id="reservation">
+             <p>Book a reservation</p>
             <input id="Name" type="text" placeholder="name"/>
             <input id="Date" type="date"  required/>
             <input id="PhoneNo" type="text" placeholder="Phone Number" required/>
@@ -214,10 +215,12 @@
                  let reserveName = document.querySelector('#Name').value;
                  let reserveDate = document.querySelector('#Date').value;
                  let reserveNumber = document.querySelector('#PhoneNo').value;
-                 ReserveData.append('name',reserveName)
-                 ReserveData.append('name',reserveDate)
-                 ReserveData.append('name',reserveNumber)
+                 ReserveData.name = reserveName;
+                 
+                 ReserveData.date = reserveDate;
+                 ReserveData.phone = reserveNumber;
                  console.log(ReserveData);
+                 alert("" +ReserveData);
               }
           </script>
     </body>
