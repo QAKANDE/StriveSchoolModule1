@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Welcome to Q to do list</title>
+        <style>
+          
+            #wrapper{
+                clear:both;
+                overflow: auto;
+	width:300px;
+	height:400px;
+	margin:0 auto;
+	padding:20px 10px;
+	background-color:blue;
+	border:3px solid blue;
+            }
+          #myList{
+            background-color:white;
+	        padding:25px;
+	        color:rgb(121, 105, 105);
+	        margin-top:5px;
+          }
+          input[type=button]{
+            font-size: 20px;
+            width: 250px;
+         /* height: 50px; */
+          }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>This is a to do list application</h1>
+            <div id="listDiv">
+            <ul id="myList">
+            </ul>
+        </div>
+            <input id ="inputField" type="text" value="Enter new task">
+            <input id="addNewTask" type="button" value = "Add new task" >
+            <input id="removeFirst" type="button" value = "Remove first task" >
+            <input id="removeLast" type="button" value = "Remove last task" >
+            <input id="ChangeBackground" type="button" value = "Change Background color" >
+            <input id="sortTask" type="button" value = "Sort task" >
+    </div>
+        <script>
+            window.onload = function()
+            {
+                let newArray=[]
+                parentList = document.getElementsByClassName("list")
+                for (let child of parentList)
+                {
+                    newArray.push(child.innerText)
+                }
+              //  newArrayList = newArray.toString()
+                console.log(newArray)
+            }
+            const addTask = function()
+            {
+                let newField = document.getElementById("inputField").value
+                let newTask = document.createElement('LI')
+                let newTaskText = document.createTextNode(newField)
+                newTask.appendChild(newTaskText)
+                let targetList = document.getElementById("myList")
+                targetList.appendChild(newTask)  
+                newField.innerHTML = ""; 
+            }
+            const removeLast = function()
+            {
+                let removeLastItemLen = document.querySelectorAll("#myList li").length
+                 if(removeLastItemLen === 0)
+                 {
+                     console.log("empty")
+                 }
+                 else{
+                    let removeLastItem = document.getElementById("myList")
+                    removeLastItem.removeChild(removeLastItem.childNodes[removeLastItemLen])  
+                 } 
+            }
+            const removeFirstTask = function()
+            {
+                let removeFirstItemLen = document.querySelectorAll("#myList li").length
+                if (removeFirstItemLen = 0)
+                {
+                    console.log("empty")
+                }
+                else {
+                    let removeFirstItem = document.getElementById("myList")
+                    removeFirstItem.removeChild(removeFirstItem.childNodes[0])
+                }
+            }
+            const changeTaskBackGround = function()
+            {
+                    let colorChange = document.getElementById("myList")
+                    colorChange.style.backgroundColor = "Red"
+                    colorChange.style.color="white"
+            }
+            const sort = function()
+            {
+              let  newArray = []
+                parentList = document.getElementsByClassName("list")
+                for (let child of parentList)
+                {
+                    newArray.push(child.innerText)
+                }
+                newArray.sort()
+                console.log(newArray)
+            }
+            let newTask = document.getElementById("addNewTask")
+            newTask.addEventListener('click' , addTask);
+            
+            let removeLastItemButton = document.getElementById("removeLast")
+            removeLastItemButton.addEventListener('click' , removeLast);
+
+            let changeColorButton = document.getElementById("ChangeBackground")
+            changeColorButton.addEventListener('click' , changeTaskBackGround);
+
+            let removeFirstItemButton = document.getElementById("removeFirst")
+            removeFirstItemButton.addEventListener('click' , removeFirstTask)
+            
+            let taskSortButton = document.getElementById("sortTask")
+            taskSortButton.addEventListener('click' , sort)
+        </script>
+    </body>
+</html>
