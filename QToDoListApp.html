@@ -35,7 +35,7 @@
             <ul id="myList">
             </ul>
         </div>
-            <input id ="inputField" type="text" value="Enter new task">
+            <input id ="inputField" type="text">
             <input id="addNewTask" type="button" value = "Add new task" >
             <input id="removeFirst" type="button" value = "Remove first task" >
             <input id="removeLast" type="button" value = "Remove last task" >
@@ -62,7 +62,7 @@
                 newTask.appendChild(newTaskText)
                 let targetList = document.getElementById("myList")
                 targetList.appendChild(newTask)  
-                newField.innerHTML = ""; 
+                newField.value = ''; 
             }
             const removeLast = function()
             {
