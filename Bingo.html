@@ -67,43 +67,34 @@
                     numberContainer.className = 'numberContainer';
                     let numberHolder = document.createElement('h2'); 
                     let number = i + 1;
-                    numberHolder.innerHTML = number;
+                    numberHolder.innerText = number;
                     numberContainer.appendChild(numberHolder); 
                     wrapper.appendChild(numberContainer) ;
-                
-        
-        let generatorButton = document.querySelector('#generatorButton')
-        generateNumbers = function()
-        {
-            for (let i = 0 ; i < 76 ; i++)
-            {
-            randomNumber = Math.floor(Math.random(i) * 76) ;
-            randomNumberValue = document.querySelector('#numberValue')
-            randomNumberValue.innerHTML = randomNumber;
-            
-            // let hightlightProcess = document.querySelectorAll('.numberContainer h2')
-            //  newhightlight =parseInt(hightlightProcess).findInArray(randomNumber)
-            //  newhightlight.style.color = 'red';
-            
-             if (numberHolder.innerHTML === randomNumberValue.innerHTML)
-             {
-                 numberHolder.style.color = "red";
-              }
-            }
-            }
+               
+                function randomNumbers(){
+                    randomNumber = Math.floor(Math.random() * 77 )
+                    randomNumberValue = document.querySelector('#numberValue')
+                    randomNumberValue.innerHTML = randomNumber;
+                    let reference = document.querySelectorAll('.numberContainer')
+                    for (let i=0 ; i<reference.length ; i++)
+                    {
+                        if (randomNumber === parseInt(reference[i].innerText))
+                        reference[i].style.backgroundColor = 'red';
+                      //  wrapper.value = randomNumber;
+                    }
+                }
+                twoboards = function()
+                {
+                     let duplicate = wrapper.cloneNode(true)
+                     duplicate.className = "duplicate"
+                     document.body.appendChild(duplicate)
+                }
+                }
+                let generatorButton = document.querySelector('#generatorButton')
+                let twoBoards=document.querySelector('#twoBoards')
+                generatorButton.addEventListener('click' ,randomNumbers) 
+                twoBoards.addEventListener('click' , twoboards)
         }
-            
-        twoboards = function()
-        {
-            let duplicate = wrapper.cloneNode(true)
-            duplicate.className = "duplicate"
-            document.body.appendChild(duplicate)
-        }
-    
-        generatorButton.addEventListener('click' ,generateNumbers) 
-        twoBoards.addEventListener('click' , twoboards)
-    }
-        
     
 
     </script>
