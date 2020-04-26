@@ -14,28 +14,27 @@
         margin: 0 auto;
       }
 
-      #container {
+       #container {
         width: 100%;
         height:50%;
         margin-bottom: 20px;
         border: 1px solid white;
-      }
+      } 
 
-      .numberContainer {
+       .numberContainer {
         display: inline-block;
         width: 45px;
         text-align: center;
         min-height: 100px;
         color: yellowgreen;
-      }
-
-      h1 {
+      } 
+       h1 {
         text-align: center;
         margin-top: 20px;
         color:yellowgreen;
         font-weight: bold;
         text-transform: uppercase;
-      }
+      } 
       h4{
           color: yellowgreen;
       }
@@ -52,7 +51,7 @@
         <h1>This is a Bingo board</h1>
         <div id="container"></div>
         <input id="generatorButton" type="button" value="Play" >
-        <input id="twoBoards" type="button" value="Play with two boards">
+        <input id="twoBoards" type="button" value="Click here to play with multiple Boards">
         <div>
             <h4 id="numberValue">This is the number </h4>
          </div>
@@ -80,6 +79,8 @@
                     {
                         if (randomNumber === parseInt(reference[i].innerText))
                         reference[i].style.backgroundColor = 'red';
+                        reference[i].style.color = 'white';
+                        
                       //  wrapper.value = randomNumber;
                     }
                 }

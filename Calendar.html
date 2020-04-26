@@ -6,25 +6,95 @@
         <title>Q calendar</title>
         <style>
             body{
-                background-color: darkkhaki;
+                background-color: rgb(107, 189, 132);
             }
+        #container{
+        width: 50%;
+        height: 30%;
+        margin-bottom: 20px;
+        border: 5px solid red;
+        }
+        .day {
+        display: inline-block;
+        width: 150px;
+        text-align: center;
+        min-height: 100px;
+        }
+        
+        #addMeeting {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #saveDay div{
+        text-align: center;
+      }
+      .selected {
+        border: 3px solid red;
+        background-color:white;
+      }
+      .selected h2 {
+        font-weight: bolder;
+      }
+
         </style>
     </head>
     <body>
+        <h1>Quadri's calendar</h1>
         <div id="container"></div>
-        <h1>MY CALENDAR</h1>
+        <h3>Save a meeting</h3>
+        <div id="addMeeting">
+        <div>
+        <h3 id="saveDay"> This is the day</h3>
+        </div>
+        <div>
+        <h3> Pick a time  <input type="time"> </h3>
+        </div>
+        <div>
+          <h3> Enter meeting details <input type="text" placeholder="Enter meeting details"> </h3>
+        </div>
+        <div>
+            <input id="saveMeeting" type="button" value="Save meeting">
+        </div>
+        </div>
+        <footer>
+            <p>Quadri Omofolarin Akande</p>
+            <p>Full stack developer</p>
+            <a href="mailto:quadriomofolarinakande@gmail.com">Contact me</a>
+        </footer>
     </body>
     <script>
         window.onload = function()
         {
-        var numberOfDays = daysInThisMonth() // 30
-        console.log(numberOfDays)
+        var numberOfDays = daysInThisMonth() 
         let calendar = document.querySelector('#container')
         for (let i=0 ; i < numberOfDays ; i++)
         {
-            let day = document.createElement('div')
-            day.className = 'day';
+            let dayHolder = document.createElement('div')
+            dayHolder.className = 'day';
+            dayHolder.onclick = function(event)
+            {
+                    let selected = document.querySelector('.selected')
+                    if(selected)
+                    {
+                        selected.className = selected.className.replace(' selected' , '')
+                    }
+                    event.currentTarget.className += ' selected'
+                    document.querySelector('#saveDay').innerText = i + 1;
+            }
 
+            let day = document.createElement('h2')
+            let dayOfTheMonth =  i + 1;
+            day.innerText = dayOfTheMonth ;
+            dayHolder.appendChild(day)
+            calendar.appendChild(dayHolder)
+
+            function getMeetingDetails()
+            {
+                let saveMeetingDetails = document.createElement('li')
+                
+
+            }
         }
 
         function daysInThisMonth() {
